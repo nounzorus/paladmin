@@ -2,6 +2,7 @@
   "name": "paladmin",
   "version": "1.0.0",
   "description": "Interface web d'administration pour serveur dédié Palworld (API REST + RCON de secours)",
+  "license": "SEE LICENSE IN LICENSE",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

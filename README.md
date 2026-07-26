@@ -156,6 +156,8 @@ Issues and pull requests are welcome. The codebase deliberately favors plain, ex
 
 ## 📄 License
 
-No license file is currently included. Treat this repository as "all rights reserved" until one is added.
+[PolyForm Noncommercial 1.0.0](LICENSE): the source is available to read, run, modify, and self-host for any noncommercial purpose. Commercial use (selling it, running it as a paid service for others, bundling it into a paid product, etc.) requires a separate agreement with the licensor.
+
+This is source-available, not OSI-approved open source: the Open Source Definition doesn't permit field-of-use restrictions like "noncommercial only," so calling it "open source" wouldn't be accurate.
 
 **Not affiliated with Pocketpair.** PalAdmin is an independent, unofficial tool; Palworld is a trademark of Pocketpair, Inc.
