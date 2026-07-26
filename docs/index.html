@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Palworld Admin Panel — self-hosted admin dashboard for dedicated servers</title>
+<title>Palworld Admin Panel: self-hosted admin dashboard for dedicated servers</title>
 <meta name="description" content="A self-hosted web admin panel for one or more dedicated Palworld servers: multi-server, RBAC, audit log, scheduled tasks, metrics history, Discord webhooks, and a 4-language UI.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐾</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -201,7 +201,7 @@
 <header class="hero">
   <span class="eyebrow">SELF-HOSTED · OPEN SOURCE · DOCKER-READY</span>
   <h1>The admin panel your <span class="accent">Palworld</span> server deserves.</h1>
-  <p class="lead">Manage one server or a whole fleet — moderation, roles, scheduling, metrics, and Discord alerts, all from one dark and cozy dashboard.</p>
+  <p class="lead">Manage one server or a whole fleet: moderation, roles, scheduling, metrics, and Discord alerts, all from one dark and cozy dashboard.</p>
   <div class="hero-actions">
     <a class="btn btn-primary" href="https://github.com/nounzorus/palworld-admin-panel">View on GitHub</a>
     <a class="btn" href="#install">Quick start →</a>
@@ -224,28 +224,28 @@
   <div class="wrap">
     <div class="kicker">Features</div>
     <h2>Everything a server admin actually reaches for</h2>
-    <p class="sub">Built around real moderation workflows — not a generic dashboard template with Palworld's name on it.</p>
+    <p class="sub">Built around real moderation workflows, not a generic dashboard template with Palworld's name on it.</p>
 
     <div class="feature-groups">
       <div class="fgroup">
         <h3>🖥️ Dashboard &amp; moderation</h3>
         <ul>
-          <li><span class="ico">📊</span><span><b>Real-time dashboard</b> <span class="dim">— FPS, uptime, in-game day, connected players, auto-refreshing every 10s</span></span></li>
-          <li><span class="ico">👤</span><span><b>Player management</b> <span class="dim">— level, ping, ID, kick, ban, and persistent per-player notes</span></span></li>
-          <li><span class="ico">📢</span><span><b>In-game announcements</b> <span class="dim">— with reusable message presets</span></span></li>
-          <li><span class="ico">💾</span><span><b>Save / restart / stop</b> <span class="dim">— scheduled shutdown with a warning message, or immediate stop</span></span></li>
-          <li><span class="ico">🖧</span><span><b>Optional RCON console</b> <span class="dim">— free-form commands per server, for when you need the escape hatch</span></span></li>
+          <li><span class="ico">📊</span><span><b>Real-time dashboard</b><span class="dim">: FPS, uptime, in-game day, connected players, auto-refreshing every 10s</span></span></li>
+          <li><span class="ico">👤</span><span><b>Player management</b><span class="dim">: level, ping, ID, kick, ban, and persistent per-player notes</span></span></li>
+          <li><span class="ico">📢</span><span><b>In-game announcements</b><span class="dim">, with reusable message presets</span></span></li>
+          <li><span class="ico">💾</span><span><b>Save / restart / stop</b><span class="dim">: scheduled shutdown with a warning message, or immediate stop</span></span></li>
+          <li><span class="ico">🖧</span><span><b>Optional RCON console</b><span class="dim">: free-form commands per server, for when you need the escape hatch</span></span></li>
         </ul>
       </div>
 
       <div class="fgroup">
         <h3>🌐 Multi-server &amp; access control</h3>
         <ul>
-          <li><span class="ico">🗂️</span><span><b>Multi-server</b> <span class="dim">— manage as many Palworld servers as you need, each with its own credentials</span></span></li>
-          <li><span class="ico">🔐</span><span><b>Roles &amp; per-user server scoping</b> <span class="dim">— non-admins only see what they're assigned to</span></span></li>
-          <li><span class="ico">📜</span><span><b>Audit log</b> <span class="dim">— every action recorded with who, what, and when</span></span></li>
-          <li><span class="ico">🚫</span><span><b>Ban view</b> <span class="dim">— derived from the audit log, since the Palworld API doesn't expose one</span></span></li>
-          <li><span class="ico">✅</span><span><b>Whitelist</b> <span class="dim">— opt-in per server, auto-kicks anyone connected who isn't on the list</span></span></li>
+          <li><span class="ico">🗂️</span><span><b>Multi-server</b><span class="dim">: manage as many Palworld servers as you need, each with its own credentials</span></span></li>
+          <li><span class="ico">🔐</span><span><b>Roles &amp; per-user server scoping</b><span class="dim">: non-admins only see what they're assigned to</span></span></li>
+          <li><span class="ico">📜</span><span><b>Audit log</b><span class="dim">: every action recorded with who, what, and when</span></span></li>
+          <li><span class="ico">🚫</span><span><b>Ban view</b><span class="dim">, derived from the audit log, since the Palworld API doesn't expose one</span></span></li>
+          <li><span class="ico">✅</span><span><b>Whitelist</b><span class="dim">, opt-in per server, auto-kicks anyone connected who isn't on the list</span></span></li>
         </ul>
         <table class="role-table">
           <tr><th>Role</th><th>Can do</th></tr>
@@ -258,19 +258,19 @@
       <div class="fgroup">
         <h3>⏰ Automation &amp; observability</h3>
         <ul>
-          <li><span class="ico">🔁</span><span><b>Scheduled tasks</b> <span class="dim">— cron auto-saves and restarts, with in-game warnings beforehand</span></span></li>
-          <li><span class="ico">📈</span><span><b>Metrics history</b> <span class="dim">— background poller tracks players/FPS over time, chart over 6h–30d</span></span></li>
-          <li><span class="ico">🔔</span><span><b>Discord webhooks</b> <span class="dim">— bans, server up/down, and imminent restarts</span></span></li>
+          <li><span class="ico">🔁</span><span><b>Scheduled tasks</b><span class="dim">: cron auto-saves and restarts, with in-game warnings beforehand</span></span></li>
+          <li><span class="ico">📈</span><span><b>Metrics history</b><span class="dim">: background poller tracks players/FPS over time, chart over 6h to 30d</span></span></li>
+          <li><span class="ico">🔔</span><span><b>Discord webhooks</b><span class="dim">: bans, server up/down, and imminent restarts</span></span></li>
         </ul>
       </div>
 
       <div class="fgroup">
         <h3>✨ Polish</h3>
         <ul>
-          <li><span class="ico">🌍</span><span><b>4-language UI</b> <span class="dim">— English, French, Spanish, Chinese, switchable anytime</span></span></li>
-          <li><span class="ico">🗃️</span><span><b>SQLite, embedded</b> <span class="dim">— no external database service to run or back up separately</span></span></li>
-          <li><span class="ico">🐳</span><span><b>One-command deploy</b> <span class="dim">— <code>docker compose up</code> and you're live</span></span></li>
-          <li><span class="ico">🔒</span><span><b>Hardened by default</b> <span class="dim">— 12h sessions, brute-force lockout, non-root container</span></span></li>
+          <li><span class="ico">🌍</span><span><b>4-language UI</b><span class="dim">: English, French, Spanish, Chinese, switchable anytime</span></span></li>
+          <li><span class="ico">🗃️</span><span><b>SQLite, embedded</b><span class="dim">, no external database service to run or back up separately</span></span></li>
+          <li><span class="ico">🐳</span><span><b>One-command deploy</b><span class="dim">: <code>docker compose up</code> and you're live</span></span></li>
+          <li><span class="ico">🔒</span><span><b>Hardened by default</b><span class="dim">: 12h sessions, brute-force lockout, non-root container</span></span></li>
         </ul>
       </div>
     </div>
@@ -286,7 +286,7 @@
     <div class="shot-grid">
       <div class="shot-card wide">
         <img src="screenshots/dashboard-zh.png" alt="Dashboard shown in Chinese, demonstrating the built-in multi-language UI" loading="lazy">
-        <div class="cap"><h4>🌍 Built-in multi-language UI</h4><p>English, French, Spanish, and Chinese out of the box — switchable from the login screen or the nav bar, no restart required.</p></div>
+        <div class="cap"><h4>🌍 Built-in multi-language UI</h4><p>English, French, Spanish, and Chinese out of the box, switchable from the login screen or the nav bar, no restart required.</p></div>
       </div>
       <div class="shot-card">
         <img src="screenshots/servers.png" alt="Servers page listing multiple Palworld servers" loading="lazy">
@@ -294,7 +294,7 @@
       </div>
       <div class="shot-card">
         <img src="screenshots/users.png" alt="Users page with admin, moderator, and viewer roles" loading="lazy">
-        <div class="cap"><h4>🔐 Roles &amp; access</h4><p>Admins manage everything; moderators moderate; viewers just watch — scoped per server.</p></div>
+        <div class="cap"><h4>🔐 Roles &amp; access</h4><p>Admins manage everything; moderators moderate; viewers just watch. All scoped per server.</p></div>
       </div>
       <div class="shot-card">
         <img src="screenshots/metrics.png" alt="Metrics history chart showing player count and FPS over time" loading="lazy">
@@ -302,7 +302,7 @@
       </div>
       <div class="shot-card">
         <img src="screenshots/audit-log.png" alt="Audit log listing every moderation and admin action" loading="lazy">
-        <div class="cap"><h4>📜 Audit log</h4><p>Every kick, ban, announcement, and config change — who did it, on what, and when.</p></div>
+        <div class="cap"><h4>📜 Audit log</h4><p>Every kick, ban, announcement, and config change: who did it, on what, and when.</p></div>
       </div>
       <div class="shot-card wide">
         <img src="screenshots/scheduled-tasks.png" alt="Scheduled tasks page with a cron-based restart and auto-save configured" loading="lazy">
@@ -316,7 +316,7 @@
   <div class="wrap">
     <div class="kicker">Get started</div>
     <h2>Live in under a minute</h2>
-    <p class="sub">Requires <a href="https://palworld.fandom.com/wiki/Dedicated_Server">RESTAPIEnabled=True</a> on your Palworld server — see the README for the exact config.</p>
+    <p class="sub">Requires <a href="https://palworld.fandom.com/wiki/Dedicated_Server">RESTAPIEnabled=True</a> on your Palworld server; see the README for the exact config.</p>
 
     <div class="install-box">
       <div class="titlebar">
@@ -335,7 +335,7 @@ cp .env.example .env
 
     <div class="steps">
       <div class="step"><span class="n">1</span><span>Open <b>http://&lt;your-machine&gt;:8080</b> and log in with the admin account from <code>.env</code>.</span></div>
-      <div class="step"><span class="n">2</span><span>Add your Palworld server from the <b>Servers</b> page — host, ports, and admin password live in the database now, not <code>.env</code>.</span></div>
+      <div class="step"><span class="n">2</span><span>Add your Palworld server from the <b>Servers</b> page: host, ports, and admin password live in the database now, not <code>.env</code>.</span></div>
       <div class="step"><span class="n">3</span><span>Invite your mod team: create <code>moderator</code>/<code>viewer</code> accounts from the <b>Users</b> page and scope them to specific servers.</span></div>
     </div>
   </div>
@@ -343,7 +343,7 @@ cp .env.example .env
 
 <footer>
   <div class="brand">🐾 PAL<span>WORLD</span> ADMIN</div>
-  <p>No license file is currently included — treat the repository as "all rights reserved" until one is added.</p>
+  <p>No license file is currently included. Treat the repository as "all rights reserved" until one is added.</p>
   <p>Not affiliated with Pocketpair. Palworld is a trademark of Pocketpair, Inc.</p>
   <div class="flinks">
     <a href="https://github.com/nounzorus/palworld-admin-panel">Repository</a>
