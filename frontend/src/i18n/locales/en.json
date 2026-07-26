@@ -55,6 +55,7 @@
   "map": {
     "title": "Live Map",
     "hint": "A generated coordinate grid, not the in-game map artwork, plotting each connected player's live position.",
+    "hintCustom": "Plotting each connected player's live position over your locally supplied map image.",
     "noPositions": "No player positions available right now.",
     "unpositioned": "{count} connected player(s) without position data."
   },

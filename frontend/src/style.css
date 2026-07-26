@@ -233,7 +233,8 @@ label input[type="checkbox"] { width: auto; }
 .unit { color: var(--muted); }
 .fine { font-size: 12px; color: var(--muted); margin: 4px 0 0; line-height: 1.5; }
 
-/* ---------- Carte des joueurs (grille générée, aucun asset du jeu) ---------- */
+/* ---------- Carte des joueurs (grille générée par défaut ; fond personnalisé optionnel
+   et local uniquement, voir frontend/public/map-background.webp dans .gitignore) ---------- */
 .map-plot {
   position: relative;
   width: 100%;
@@ -244,6 +245,11 @@ label input[type="checkbox"] { width: auto; }
   border-radius: var(--radius);
   background: var(--bg-2, #122225);
   overflow: hidden;
+}
+.map-plot.has-custom-bg {
+  background-image: url("/map-background.webp");
+  background-size: cover;
+  background-position: center;
 }
 .map-grid {
   position: absolute;
