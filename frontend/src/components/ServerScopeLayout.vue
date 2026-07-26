@@ -42,6 +42,7 @@ watch(serverId, () => {
   <ServerSwitcher :current-server-id="serverId" />
   <nav class="tabs">
     <router-link class="tab" :to="{ name: 'server-dashboard', params: { serverId } }">{{ t('serverNav.dashboard') }}</router-link>
+    <router-link class="tab" :to="{ name: 'server-map', params: { serverId } }">{{ t('serverNav.map') }}</router-link>
     <router-link class="tab" :to="{ name: 'server-settings', params: { serverId } }">{{ t('serverNav.settings') }}</router-link>
     <router-link class="tab" :to="{ name: 'server-bans', params: { serverId } }">{{ t('serverNav.bans') }}</router-link>
     <router-link class="tab" :to="{ name: 'server-whitelist', params: { serverId } }">{{ t('serverNav.whitelist') }}</router-link>

@@ -26,6 +26,7 @@
   },
   "serverNav": {
     "dashboard": "Tableau de bord",
+    "map": "Carte",
     "settings": "Paramètres serveur",
     "bans": "Bannissements",
     "whitelist": "Liste blanche",
@@ -50,6 +51,12 @@
     "kicked": "{name} : expulsé.",
     "banned": "{name} : banni.",
     "refreshedAt": "Actualisé à {time}"
+  },
+  "map": {
+    "title": "Carte en direct",
+    "hint": "Une grille de coordonnées générée, pas la carte du jeu, affichant la position en direct de chaque joueur connecté.",
+    "noPositions": "Aucune position de joueur disponible pour le moment.",
+    "unpositioned": "{count} joueur(s) connecté(s) sans données de position."
   },
   "announce": {
     "title": "Annonce en jeu",

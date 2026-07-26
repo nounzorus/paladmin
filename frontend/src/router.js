@@ -6,6 +6,7 @@ import UsersView from './views/UsersView.vue'
 import AuditLogView from './views/AuditLogView.vue'
 import ServerScopeLayout from './components/ServerScopeLayout.vue'
 import DashboardView from './views/DashboardView.vue'
+import MapView from './views/MapView.vue'
 import SettingsView from './views/SettingsView.vue'
 import ConsoleView from './views/ConsoleView.vue'
 import BansView from './views/BansView.vue'
@@ -28,6 +29,7 @@ const routes = [
     children: [
       { path: '', redirect: (to) => ({ name: 'server-dashboard', params: to.params }) },
       { path: 'dashboard', name: 'server-dashboard', component: DashboardView },
+      { path: 'map', name: 'server-map', component: MapView },
       { path: 'settings', name: 'server-settings', component: SettingsView },
       { path: 'console', name: 'server-console', component: ConsoleView, meta: { roles: ['admin'] } },
       { path: 'bans', name: 'server-bans', component: BansView },

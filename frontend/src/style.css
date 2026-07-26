@@ -233,6 +233,76 @@ label input[type="checkbox"] { width: auto; }
 .unit { color: var(--muted); }
 .fine { font-size: 12px; color: var(--muted); margin: 4px 0 0; line-height: 1.5; }
 
+/* ---------- Carte des joueurs (grille générée, aucun asset du jeu) ---------- */
+.map-plot {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  max-height: 640px;
+  margin: 0 auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg-2, #122225);
+  overflow: hidden;
+}
+.map-grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(79, 209, 197, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(79, 209, 197, 0.08) 1px, transparent 1px);
+  background-size: 10% 10%;
+}
+.map-empty {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  pointer-events: none;
+}
+.map-dot {
+  position: absolute;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  transition: left 1s ease, top 1s ease;
+  width: 22px; height: 22px;
+  display: flex; align-items: center; justify-content: center;
+}
+.map-dot::before {
+  content: "";
+  width: 10px; height: 10px;
+  background: var(--amber);
+  border: 2px solid var(--bg-2, #122225);
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(242, 169, 59, 0.6);
+}
+.map-dot-ping {
+  position: absolute; top: 50%; left: 50%;
+  width: 22px; height: 22px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: rgba(242, 169, 59, 0.35);
+  animation: map-ping 2.4s ease-out infinite;
+  pointer-events: none;
+}
+@keyframes map-ping {
+  0% { transform: scale(0.6); opacity: 0.8; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+.map-dot-label {
+  position: absolute;
+  top: 14px; left: 50%; transform: translateX(-50%);
+  white-space: nowrap;
+  font-size: 11px; color: var(--text);
+  background: rgba(14, 27, 30, 0.9);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 1px 6px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+}
+.map-dot:hover .map-dot-label { opacity: 1; }
+
 /* ---------- Console RCON ---------- */
 .rcon-output {
   background: #0a1416;
