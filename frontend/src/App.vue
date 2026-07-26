@@ -5,6 +5,7 @@ import LoginScreen from './components/LoginScreen.vue'
 import NavBar from './components/NavBar.vue'
 import ToastNotification from './components/ToastNotification.vue'
 import ConfirmDialog from './components/ConfirmDialog.vue'
+import CoffeeWidget from './components/CoffeeWidget.vue'
 
 const route = useRoute()
 </script>
@@ -17,5 +18,6 @@ const route = useRoute()
     <router-view />
     <ToastNotification />
     <ConfirmDialog />
+    <CoffeeWidget />
   </div>
 </template>
