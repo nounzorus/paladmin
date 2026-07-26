@@ -1,5 +1,5 @@
 /**
- * Palworld Admin Panel — backend
+ * PalAdmin : backend
  * Proxifie l'API REST officielle des serveurs dédiés Palworld
  * (et fournit un client RCON de secours pour les commandes console).
  */
@@ -111,6 +111,6 @@ bootstrapAdmin().then(() => {
   metricsHistory.start();
   whitelist.start();
   app.listen(CFG.panelPort, () => {
-    console.log(`Palworld Admin Panel listening on http://0.0.0.0:${CFG.panelPort}`);
+    console.log(`PalAdmin listening on http://0.0.0.0:${CFG.panelPort}`);
   });
 });

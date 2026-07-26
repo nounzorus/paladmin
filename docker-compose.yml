@@ -1,13 +1,13 @@
 services:
-  palworld-admin:
+  paladmin:
     build: .
-    container_name: palworld-admin
+    container_name: paladmin
     restart: unless-stopped
     ports:
       - "8080:8080"
     env_file: .env
     volumes:
-      # Base SQLite (comptes, serveurs, historique...) — doit survivre aux recréations du conteneur.
+      # Base SQLite (comptes, serveurs, historique...), doit survivre aux recréations du conteneur.
       - ./data:/app/data
     # Si un de vos serveurs Palworld tourne sur la machine hôte (hors Docker),
     # ceci permet d'utiliser "host.docker.internal" comme hôte lors de son

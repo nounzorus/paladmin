@@ -1,11 +1,11 @@
 <div align="center">
 
-# 🐾 Palworld Admin Panel
+# 🐾 PalAdmin
 
 **A self-hosted web admin panel for one or more dedicated Palworld servers.**
 Deployable with a single `docker compose up`.
 
-**[🌐 View the website](https://nounzorus.github.io/palworld-admin-panel/)**: screenshots, features, and a quick-start guide.
+**[🌐 View the website](https://nounzorus.github.io/paladmin/)**: screenshots, features, and a quick-start guide.
 
 ![Node](https://img.shields.io/badge/node-%E2%89%A522.5-339933?style=flat-square&logo=nodedotjs&logoColor=white)
 ![Express](https://img.shields.io/badge/express-4-000000?style=flat-square&logo=express&logoColor=white)
@@ -157,3 +157,5 @@ Issues and pull requests are welcome. The codebase deliberately favors plain, ex
 ## 📄 License
 
 No license file is currently included. Treat this repository as "all rights reserved" until one is added.
+
+**Not affiliated with Pocketpair.** PalAdmin is an independent, unofficial tool; Palworld is a trademark of Pocketpair, Inc.

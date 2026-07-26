@@ -85,7 +85,7 @@ async function fireEvent(eventKey, { serverId, message }) {
 
 async function sendTest(webhook) {
   try {
-    const ok = await postDiscord(webhook.url, `Test message from Palworld Admin Panel — webhook "${webhook.label || webhook.id}" is configured correctly.`);
+    const ok = await postDiscord(webhook.url, `Test message from PalAdmin: webhook "${webhook.label || webhook.id}" is configured correctly.`);
     markFired(webhook.id, ok ? "WEBHOOK_OK" : "WEBHOOK_HTTP_ERROR");
     return ok;
   } catch (e) {

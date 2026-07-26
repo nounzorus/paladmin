@@ -24,7 +24,7 @@ async function onSubmit() {
   <section id="login-screen" class="login-screen">
     <form id="login-form" class="login-card" autocomplete="off" @submit.prevent="onSubmit">
       <div class="login-card-head">
-        <div class="login-mark">PAL<span>WORLD</span></div>
+        <div class="login-mark">PAL<span>ADMIN</span></div>
         <LanguageSwitcher />
       </div>
       <h1>{{ t('login.title') }}</h1>

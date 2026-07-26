@@ -9,7 +9,7 @@ const { t } = useI18n()
 
 <template>
   <header class="navbar">
-    <div class="login-mark navbar-mark">PAL<span>WORLD</span></div>
+    <div class="login-mark navbar-mark">PAL<span>ADMIN</span></div>
     <nav class="navbar-links">
       <router-link :to="{ name: 'servers' }">{{ t('nav.servers') }}</router-link>
       <router-link v-if="hasRole('admin')" :to="{ name: 'users' }">{{ t('nav.users') }}</router-link>

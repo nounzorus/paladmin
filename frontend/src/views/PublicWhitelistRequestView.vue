@@ -54,7 +54,7 @@ async function onSubmit() {
   <section class="login-screen">
     <div class="login-card">
       <div class="login-card-head">
-        <div class="login-mark">PAL<span>WORLD</span></div>
+        <div class="login-mark">PAL<span>ADMIN</span></div>
         <LanguageSwitcher />
       </div>
 

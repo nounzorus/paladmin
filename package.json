@@ -1,5 +1,5 @@
 {
-  "name": "palworld-admin-panel",
+  "name": "paladmin",
   "version": "1.0.0",
   "description": "Interface web d'administration pour serveur dédié Palworld (API REST + RCON de secours)",
   "main": "server.js",

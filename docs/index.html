@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Palworld Admin Panel: self-hosted admin dashboard for dedicated servers</title>
+<title>PalAdmin: self-hosted admin dashboard for Palworld dedicated servers</title>
 <meta name="description" content="A self-hosted web admin panel for one or more dedicated Palworld servers: multi-server, RBAC, audit log, scheduled tasks, metrics history, Discord webhooks, and a 4-language UI.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐾</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -315,14 +315,14 @@
 <div class="progress-bar" id="progress-bar"></div>
 
 <nav class="top" id="nav">
-  <div class="brand">🐾 PAL<span>WORLD</span> ADMIN</div>
+  <div class="brand">🐾 PAL<span>ADMIN</span></div>
   <div class="links">
     <a href="#features">Features</a>
     <a href="#screenshots">Screenshots</a>
     <a href="#install">Install</a>
-    <a href="https://github.com/nounzorus/palworld-admin-panel">GitHub</a>
+    <a href="https://github.com/nounzorus/paladmin">GitHub</a>
   </div>
-  <a class="btn btn-primary" href="https://github.com/nounzorus/palworld-admin-panel">⭐ Star on GitHub</a>
+  <a class="btn btn-primary" href="https://github.com/nounzorus/paladmin">⭐ Star on GitHub</a>
 </nav>
 
 <header class="hero" id="hero">
@@ -331,7 +331,7 @@
   <h1 class="reveal-hero">The admin panel your <span class="accent">Palworld</span> server deserves.</h1>
   <p class="lead reveal-hero">Manage one server or a whole fleet: moderation, roles, scheduling, metrics, and Discord alerts, all from one dark and cozy dashboard.</p>
   <div class="hero-actions reveal-hero">
-    <a class="btn btn-primary" href="https://github.com/nounzorus/palworld-admin-panel">View on GitHub</a>
+    <a class="btn btn-primary" href="https://github.com/nounzorus/paladmin">View on GitHub</a>
     <a class="btn" href="#install">Quick start →</a>
   </div>
   <div class="badges reveal-hero">
@@ -344,7 +344,7 @@
     <img src="https://img.shields.io/badge/i18n-EN%20%7C%20FR%20%7C%20ES%20%7C%20ZH-1c1508?style=flat-square" alt="i18n">
   </div>
   <div class="hero-shot reveal-hero" id="hero-shot">
-    <img src="screenshots/dashboard.png" alt="Palworld Admin Panel dashboard showing connected players, server stats, and moderation tools" loading="eager">
+    <img src="screenshots/dashboard.png" alt="PalAdmin dashboard showing connected players, server stats, and moderation tools" loading="eager">
   </div>
 </header>
 
@@ -453,8 +453,8 @@
         <button class="copy-btn" onclick="copyInstall(this)">Copy</button>
       </div>
       <pre class="install" id="install-cmd"><span class="c"># 1. clone &amp; configure</span>
-git clone https://github.com/nounzorus/palworld-admin-panel.git
-cd palworld-admin-panel
+git clone https://github.com/nounzorus/paladmin.git
+cd paladmin
 cp .env.example .env
 <span class="c"># edit .env: set PANEL_ADMIN_USERNAME + PANEL_ADMIN_PASSWORD</span>
 
@@ -471,13 +471,13 @@ cp .env.example .env
 </section>
 
 <footer class="reveal">
-  <div class="brand">🐾 PAL<span>WORLD</span> ADMIN</div>
+  <div class="brand">🐾 PAL<span>ADMIN</span></div>
   <p>No license file is currently included. Treat the repository as "all rights reserved" until one is added.</p>
   <p>Not affiliated with Pocketpair. Palworld is a trademark of Pocketpair, Inc.</p>
   <div class="flinks">
-    <a href="https://github.com/nounzorus/palworld-admin-panel">Repository</a>
-    <a href="https://github.com/nounzorus/palworld-admin-panel/issues">Issues</a>
-    <a href="https://github.com/nounzorus/palworld-admin-panel#readme">Full README</a>
+    <a href="https://github.com/nounzorus/paladmin">Repository</a>
+    <a href="https://github.com/nounzorus/paladmin/issues">Issues</a>
+    <a href="https://github.com/nounzorus/paladmin#readme">Full README</a>
   </div>
 </footer>
 
