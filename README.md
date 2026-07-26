@@ -5,6 +5,8 @@
 **A self-hosted web admin panel for one or more dedicated Palworld servers.**
 Deployable with a single `docker compose up`.
 
+**[🌐 View the website](https://nounzorus.github.io/palworld-admin-panel/)** — screenshots, features, and a quick-start guide.
+
 ![Node](https://img.shields.io/badge/node-%E2%89%A522.5-339933?style=flat-square&logo=nodedotjs&logoColor=white)
 ![Express](https://img.shields.io/badge/express-4-000000?style=flat-square&logo=express&logoColor=white)
 ![Vue](https://img.shields.io/badge/vue-3-4FC08D?style=flat-square&logo=vuedotjs&logoColor=white)
