@@ -3,8 +3,12 @@ frontend/node_modules/
 frontend/dist/
 .env
 data/
+data-local/
 
 # Local-only, not part of the published project
 CLAUDE.md
 .claude/
 .playwright-mcp/
+
+# Optional local map background for the live player map -- bring-your-own-asset, not shipped
+frontend/public/map-background.png

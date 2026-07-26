@@ -257,7 +257,6 @@ label input[type="checkbox"] { width: auto; }
   transition: transform 0.1s linear;
 }
 .map-plot.has-custom-bg {
-  background-image: url("/map-background.webp");
   background-size: cover;
   background-position: center;
 }

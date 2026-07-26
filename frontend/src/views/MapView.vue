@@ -29,22 +29,28 @@ const WORLD_MAX_X = 447900
 const WORLD_MIN_Y = -738920
 const WORLD_MAX_Y = 708920
 
-// Empirical calibration on top of the landscape-bounds transform above: the published
-// bounds alone landed players at the wrong spot (confirmed against a real server with 2
-// reference players, comparing the plotted position to their true position on the map
-// image). Rather than guess at a second "correct" set of bounds, this is a direct linear
-// fit (real = a * plotted + b) from those 2 calibration points:
-//   Player 1: plotted (54.8254%, 68.1947%) -> real (67.2254%, 46.47%)
-//   Player 2: plotted (42.088%,  46.8759%) -> real (45.888%,  23.4759%)
-// Re-derive these constants (see git history for the fitting script) if either the bounds
-// above change or a third reference point shows the fit no longer holds.
-const CALIBRATION = { leftA: 1.675177, leftB: -24.616851, topA: 1.078583, topB: -27.083659 }
+// Calibration reset: two attempts at fitting a correction on top of the landscape-bounds
+// transform (per-axis linear, then a full 6-param affine with cross terms) both made
+// positions worse against the reference map image, not better -- meaning the calibration
+// data (hand-estimated percentages against a since-replaced image) wasn't trustworthy
+// enough to fit against. Back to the plain landscape-bounds transform, no correction, to
+// re-baseline against the current map-background image (see the probe below) before trying
+// to calibrate again -- and if re-calibrating, prefer precise pixel measurements over
+// eyeballed percentages, and points spread across the whole map rather than clustered.
+const CALIBRATION = { leftA: 1, leftB: 0, leftC: 0, topA: 0, topB: 1, topC: 0 }
 
 const customBackground = ref(false)
+const backgroundUrl = ref('')
 onMounted(() => {
-  const probe = new Image()
-  probe.onload = () => { customBackground.value = true }
-  probe.src = '/map-background.webp'
+  const candidates = ['/map-background.png', '/map-background.webp']
+  function tryNext(i) {
+    if (i >= candidates.length) return
+    const probe = new Image()
+    probe.onload = () => { customBackground.value = true; backgroundUrl.value = candidates[i] }
+    probe.onerror = () => tryNext(i + 1)
+    probe.src = candidates[i]
+  }
+  tryNext(0)
 })
 
 function uidOf(p) {
@@ -60,8 +66,8 @@ function posOf(p) {
   const ny = (p.location_y - WORLD_MIN_Y) / (WORLD_MAX_Y - WORLD_MIN_Y)
   const rawLeft = (1 - nx) * 100
   const rawTop = ny * 100
-  const left = CALIBRATION.leftA * rawLeft + CALIBRATION.leftB
-  const top = CALIBRATION.topA * rawTop + CALIBRATION.topB
+  const left = CALIBRATION.leftA * rawLeft + CALIBRATION.leftB * rawTop + CALIBRATION.leftC
+  const top = CALIBRATION.topA * rawLeft + CALIBRATION.topB * rawTop + CALIBRATION.topC
   return {
     left: Math.min(100, Math.max(0, left)) + '%',
     top: Math.min(100, Math.max(0, top)) + '%',
@@ -86,6 +92,7 @@ const dragging = ref(false)
 
 const plotStyle = computed(() => ({
   transform: `translate(${panX.value}px, ${panY.value}px) scale(${zoom.value})`,
+  ...(customBackground.value ? { backgroundImage: `url("${backgroundUrl.value}")` } : {}),
 }))
 
 function dotStyle(p) {
