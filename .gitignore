@@ -8,6 +8,3 @@ data/
 CLAUDE.md
 .claude/
 .playwright-mcp/
-
-# Optional local map background for the live player map — game asset, never redistributed
-frontend/public/map-background.webp
