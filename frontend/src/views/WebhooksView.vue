@@ -14,6 +14,7 @@ const EVENTS = [
   { key: 'server_down', labelKey: 'webhooks.eventServerDown' },
   { key: 'restart_imminent', labelKey: 'webhooks.eventRestartImminent' },
   { key: 'whitelist_kick', labelKey: 'webhooks.eventWhitelistKick' },
+  { key: 'whitelist_request_submitted', labelKey: 'webhooks.eventWhitelistRequestSubmitted' },
 ]
 
 const webhooks = ref([])

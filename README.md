@@ -54,6 +54,7 @@ It talks to the **official Palworld REST API** (Pocketpair deprecated RCON in fa
 - 📜 **Audit log**: every action (kick, ban, announce, shutdown, user/server changes…) recorded with who did it, on what, and when
 - 🚫 **Ban view** derived from the audit log (the Palworld API has no endpoint to list active bans)
 - ✅ **Whitelist**: per-server opt-in list of allowed players. When enabled, a background poller auto-kicks anyone connected who isn't on the list (the Palworld API has no native connection filter, so this is enforced the same way bans are derived: by working around what the API actually offers)
+- 📝 **Whitelist requests**: a public, no-login join link (`/join/:serverId`) players can use to request access; admins and moderators approve or reject from the panel
 
 **Automation & observability**
 - ⏰ **Scheduled tasks**: recurring auto-saves and restarts (cron-based), with in-game warning announcements before a restart
@@ -109,10 +110,11 @@ Entered as the "host" when adding a server in the panel:
 - The panel itself speaks plain HTTP. For access from outside your network, put it behind an HTTPS reverse proxy (Caddy, Traefik, Nginx) or a VPN (WireGuard/Tailscale).
 - Choose a strong `PANEL_ADMIN_PASSWORD`. Palworld admin passwords entered on the Servers page are stored in **cleartext** in the local SQLite database (same trust model as the original plaintext `.env`); the `data/` directory is gitignored and should stay on a disk you don't share.
 - Back up the `data/` directory (the SQLite file) if you want to keep accounts, servers, and history across container recreations; the `./data:/app/data` volume in `docker-compose.yml` already takes care of that for you.
+- The whitelist join link (`/join/:serverId`) is the one page that's reachable without logging in. It's rate-limited per IP and has a honeypot field against basic bots, but submissions still just create a pending request; nothing is added to the whitelist without an admin or moderator approving it.
 
 ## 🔌 Internal API
 
-The backend proxies the Palworld REST API (`/v1/api/...`) and only exposes its own authenticated, server-scoped routes to the browser: `/api/servers/:id/{info,metrics,players,settings,announce,save,shutdown,stop,rcon}`, plus top-level resources `/api/servers`, `/api/users`, `/api/audit-log`, `/api/webhooks`. Palworld admin passwords never leave the panel's backend; they're never sent to the browser.
+The backend proxies the Palworld REST API (`/v1/api/...`) and only exposes its own authenticated, server-scoped routes to the browser: `/api/servers/:id/{info,metrics,players,settings,announce,save,shutdown,stop,rcon}`, plus top-level resources `/api/servers`, `/api/users`, `/api/audit-log`, `/api/webhooks`. Palworld admin passwords never leave the panel's backend; they're never sent to the browser. One route tree, `/public/servers/:id/*`, is intentionally unauthenticated: it backs the whitelist join link and only ever creates pending requests, never anything an admin didn't approve.
 
 ## 🛠️ Local development (without Docker)
 

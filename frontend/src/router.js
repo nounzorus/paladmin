@@ -13,9 +13,11 @@ import WhitelistView from './views/WhitelistView.vue'
 import ScheduledTasksView from './views/ScheduledTasksView.vue'
 import MetricsHistoryView from './views/MetricsHistoryView.vue'
 import WebhooksView from './views/WebhooksView.vue'
+import PublicWhitelistRequestView from './views/PublicWhitelistRequestView.vue'
 
 const routes = [
   { path: '/', redirect: '/servers' },
+  { path: '/join/:serverId', name: 'public-join', component: PublicWhitelistRequestView, meta: { public: true } },
   { path: '/servers', name: 'servers', component: ServersView },
   { path: '/users', name: 'users', component: UsersView, meta: { roles: ['admin'] } },
   { path: '/audit-log', name: 'audit-log', component: AuditLogView, meta: { roles: ['admin'] } },

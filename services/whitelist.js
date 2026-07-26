@@ -114,4 +114,4 @@ function start() {
   setInterval(pollAll, CFG.whitelistPollIntervalMs).unref();
 }
 
-module.exports = { isEnabled, setEnabled, list, getById, add, remove, start };
+module.exports = { isEnabled, setEnabled, list, getById, add, remove, isWhitelisted, start };

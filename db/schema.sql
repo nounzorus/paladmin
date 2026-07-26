@@ -109,6 +109,21 @@ CREATE TABLE IF NOT EXISTS whitelist_entries (
 );
 CREATE INDEX IF NOT EXISTS idx_whitelist_entries_server ON whitelist_entries(server_id);
 
+CREATE TABLE IF NOT EXISTS whitelist_requests (
+  id                    INTEGER PRIMARY KEY AUTOINCREMENT,
+  server_id             INTEGER NOT NULL REFERENCES servers(id) ON DELETE CASCADE,
+  player_userid         TEXT NOT NULL,
+  player_name           TEXT,
+  message               TEXT,
+  status                TEXT NOT NULL DEFAULT 'pending' CHECK (status IN ('pending','approved','rejected')),
+  ip                    TEXT,
+  reviewed_by           INTEGER REFERENCES users(id) ON DELETE SET NULL,
+  reviewed_by_username  TEXT,
+  reviewed_at           TEXT,
+  created_at            TEXT NOT NULL DEFAULT (datetime('now'))
+);
+CREATE INDEX IF NOT EXISTS idx_whitelist_requests_server_status ON whitelist_requests(server_id, status);
+
 CREATE TABLE IF NOT EXISTS webhooks (
   id             INTEGER PRIMARY KEY AUTOINCREMENT,
   server_id      INTEGER REFERENCES servers(id) ON DELETE CASCADE,

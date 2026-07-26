@@ -30,6 +30,8 @@ const scheduledTasksRouter = require("./routes/scheduled-tasks");
 const metricsHistoryRouter = require("./routes/metrics-history");
 const webhooksRouter = require("./routes/webhooks");
 const whitelistRouter = require("./routes/whitelist");
+const whitelistRequestsRouter = require("./routes/whitelist-requests");
+const publicRouter = require("./routes/public");
 
 const app = express();
 app.use(express.json());
@@ -76,6 +78,11 @@ app.use(
   metricsHistoryRouter
 );
 app.use(
+  "/api/servers/:serverId/whitelist-requests",
+  requireAuth, resolveServer, requireServerAccess(),
+  whitelistRequestsRouter
+);
+app.use(
   "/api/servers/:serverId/whitelist",
   requireAuth, resolveServer, requireServerAccess(),
   whitelistRouter
@@ -85,6 +92,7 @@ app.use(
   requireAuth, resolveServer, requireServerAccess(),
   serverActionsRouter
 );
+app.use("/public/servers/:serverId", publicRouter);
 
 // Repli SPA : toute route non-API sert index.html (routage côté client par Vue Router)
 app.get(/^(?!\/api|\/auth).*/, (req, res) => {
