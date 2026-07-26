@@ -57,7 +57,8 @@
     "hint": "Una cuadrícula de coordenadas generada, no el mapa del juego, con la posición en vivo de cada jugador conectado.",
     "hintCustom": "Posición en vivo de cada jugador conectado, mostrada sobre la imagen de mapa proporcionada localmente.",
     "noPositions": "No hay posiciones de jugadores disponibles por ahora.",
-    "unpositioned": "{count} jugador(es) conectado(s) sin datos de posición."
+    "unpositioned": "{count} jugador(es) conectado(s) sin datos de posición.",
+    "resetZoom": "Restablecer"
   },
   "announce": {
     "title": "Anuncio en el juego",
