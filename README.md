@@ -29,6 +29,7 @@ It talks to the **official Palworld REST API** (Pocketpair deprecated RCON in fa
 - [Local development](#-local-development-without-docker)
 - [Architecture](#-architecture)
 - [Contributing](#-contributing)
+- [Sponsors](#-sponsors)
 - [License](#-license)
 
 ## ✨ Features
@@ -153,6 +154,10 @@ frontend/     # Vue 3 + Vite + Vue Router SPA (composables + components + views)
 ## 🤝 Contributing
 
 Issues and pull requests are welcome. The codebase deliberately favors plain, explicit code over abstractions: services paired one-to-one with routes, no ORM, no generic decorators where an explicit function call reads just as well.
+
+## ☕ Sponsors
+
+If PalAdmin is useful to you, consider [buying me a coffee](https://buymeacoffee.com/nounzor).
 
 ## 📄 License
 

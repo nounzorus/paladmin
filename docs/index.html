@@ -92,6 +92,7 @@
   }
   .brand span { color: var(--teal); }
   nav.top .links { display: flex; gap: 28px; align-items: center; }
+  .nav-actions { display: flex; gap: 10px; align-items: center; }
   nav.top .links a { color: var(--muted); text-decoration: none; font-size: 14.5px; font-weight: 500; position: relative; }
   nav.top .links a::after {
     content: ""; position: absolute; left: 0; bottom: -4px; width: 0; height: 1px; background: var(--teal);
@@ -321,9 +322,11 @@
     <a href="#screenshots">Screenshots</a>
     <a href="#install">Install</a>
     <a href="https://github.com/nounzorus/paladmin">GitHub</a>
-    <a href="https://buymeacoffee.com/nounzor" target="_blank" rel="noopener">☕ Buy me a coffee</a>
   </div>
-  <a class="btn btn-primary" href="https://github.com/nounzorus/paladmin">⭐ Star on GitHub</a>
+  <div class="nav-actions">
+    <a class="btn" href="https://buymeacoffee.com/nounzor" target="_blank" rel="noopener">☕ Buy me a coffee</a>
+    <a class="btn btn-primary" href="https://github.com/nounzorus/paladmin">⭐ Star on GitHub</a>
+  </div>
 </nav>
 
 <header class="hero" id="hero">
