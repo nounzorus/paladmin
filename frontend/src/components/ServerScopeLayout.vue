@@ -28,7 +28,6 @@ async function loadServerInfo() {
 }
 
 const polling = usePolling(dashboardData.refreshAll, 10_000)
-provide('polling', polling)
 onMounted(() => polling.start())
 onUnmounted(() => polling.stop())
 

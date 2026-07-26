@@ -35,7 +35,6 @@ It talks to the **official Palworld REST API** (Pocketpair deprecated RCON in fa
 
 **Dashboard & moderation**
 - 🖥️ Real-time dashboard: server name/version, FPS, uptime, in-game day, connected players (auto-refreshes every 10s)
-- 🗺️ Live player map: plots each connected player's live position, sourced straight from the REST API, over a generated grid by default (or your own local map image, see `frontend/public/map-background.webp`)
 - 👤 Player list with level, ping, and ID; kick, ban, and persistent per-player notes
 - 📢 In-game announcements, with reusable message presets
 - 💾 World save, scheduled shutdown with a warning message, immediate stop

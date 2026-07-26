@@ -27,7 +27,6 @@
   },
   "serverNav": {
     "dashboard": "Panel",
-    "map": "Mapa",
     "settings": "Configuración del servidor",
     "bans": "Baneos",
     "whitelist": "Lista blanca",
@@ -52,15 +51,6 @@
     "kicked": "{name}: expulsado.",
     "banned": "{name}: baneado.",
     "refreshedAt": "Actualizado a las {time}"
-  },
-  "map": {
-    "title": "Mapa en vivo",
-    "hint": "Una cuadrícula de coordenadas generada, no el mapa del juego, con la posición en vivo de cada jugador conectado.",
-    "hintCustom": "Posición en vivo de cada jugador conectado, mostrada sobre la imagen de mapa proporcionada localmente.",
-    "noPositions": "No hay posiciones de jugadores disponibles por ahora.",
-    "unpositioned": "{count} jugador(es) conectado(s) sin datos de posición.",
-    "resetZoom": "Restablecer",
-    "refresh": "Actualizar"
   },
   "announce": {
     "title": "Anuncio en el juego",
