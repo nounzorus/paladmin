@@ -125,10 +125,8 @@
   "settings": {
     "title": "Configuración activa",
     "hint": "Solo lectura: la API no permite cambios de configuración en caliente. Edita PalWorldSettings.ini y luego reinicia.",
-    "key": "Clave",
-    "value": "Valor",
     "loading": "Cargando…",
-    "empty": "No se devolvió ninguna configuración.",
+    "otherCategory": "Otros (fuera del catálogo)",
     "generatorTitle": "Generador de configuración",
     "generatorCount": "{count} ajustes en {categories} categorías",
     "generatorHint": "Genera una línea OptionSettings para PalWorldSettings.ini que puedes copiar en tu servidor. El panel no puede escribir ese archivo por ti (sin acceso al sistema de archivos, y la API REST no permite escribir configuración): copia el resultado de abajo, reemplaza la línea OptionSettings=(...) en el PalWorldSettings.ini de tu servidor, y reinícialo para aplicar los cambios.",

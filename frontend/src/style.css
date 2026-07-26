@@ -373,6 +373,7 @@ label input[type="checkbox"] { width: auto; }
 .config-field input[type="number"],
 .config-field select { width: 100%; }
 .config-field input[type="checkbox"] { width: auto; justify-self: end; margin-top: 2px; }
+.config-value { color: var(--amber-2); font-size: 13px; justify-self: end; word-break: break-word; text-align: right; }
 .config-output { margin-top: 20px; }
 .config-output-text {
   width: 100%; resize: vertical;

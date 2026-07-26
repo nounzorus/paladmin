@@ -125,10 +125,8 @@
   "settings": {
     "title": "Active Settings",
     "hint": "Read-only: the API doesn't support hot config changes. Edit PalWorldSettings.ini then restart.",
-    "key": "Key",
-    "value": "Value",
     "loading": "Loading…",
-    "empty": "No settings returned.",
+    "otherCategory": "Other (not in the catalog)",
     "generatorTitle": "Config Generator",
     "generatorCount": "{count} settings across {categories} categories",
     "generatorHint": "Builds a PalWorldSettings.ini OptionSettings line to copy onto your server. This panel can't write the file for you (no filesystem access, and the REST API doesn't support config writes): copy the result below, replace the OptionSettings=(...) line in your server's PalWorldSettings.ini, and restart the server to apply it.",

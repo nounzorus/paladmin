@@ -125,10 +125,8 @@
   "settings": {
     "title": "当前设置",
     "hint": "只读：该 API 不支持热更新配置。请编辑 PalWorldSettings.ini 后重启服务器。",
-    "key": "键",
-    "value": "值",
     "loading": "加载中…",
-    "empty": "未返回任何设置。",
+    "otherCategory": "其他（不在目录中）",
     "generatorTitle": "配置生成器",
     "generatorCount": "共 {count} 项设置，分为 {categories} 个分类",
     "generatorHint": "生成可复制到你服务器上的 PalWorldSettings.ini OptionSettings 配置行。面板无法代你写入该文件（没有文件系统访问权限，且 REST API 不支持写入配置）：复制下方结果，替换服务器 PalWorldSettings.ini 中的 OptionSettings=(...) 那一行，然后重启服务器以生效。",

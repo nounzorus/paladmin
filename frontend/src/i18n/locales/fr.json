@@ -125,10 +125,8 @@
   "settings": {
     "title": "Paramètres actifs",
     "hint": "Lecture seule : l'API ne permet pas la modification à chaud. Éditez PalWorldSettings.ini puis redémarrez.",
-    "key": "Clé",
-    "value": "Valeur",
     "loading": "Chargement…",
-    "empty": "Aucun paramètre renvoyé.",
+    "otherCategory": "Autres (hors catalogue)",
     "generatorTitle": "Générateur de configuration",
     "generatorCount": "{count} paramètres répartis en {categories} catégories",
     "generatorHint": "Génère une ligne OptionSettings pour PalWorldSettings.ini, à copier sur votre serveur. Le panel ne peut pas écrire ce fichier à votre place (pas d'accès au système de fichiers, et l'API REST ne permet pas la modification de configuration) : copiez le résultat ci-dessous, remplacez la ligne OptionSettings=(...) dans le PalWorldSettings.ini de votre serveur, puis redémarrez-le pour appliquer les changements.",
