@@ -1,9 +1,22 @@
 <script setup>
-import { inject, computed, ref, onMounted } from 'vue'
+import { inject, computed, ref, onMounted, onUnmounted, nextTick } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
 const dashboard = inject('dashboardData')
+
+// TEMPORARY (debugging the coordinate transform): pause the shared 10s auto-refresh while
+// this page is open, so a player's dot doesn't move mid-inspection, and offer a manual
+// refresh button instead. Resumes normal polling on leaving the page. Revert once the
+// map coordinates are confirmed correct, see MapView.vue's posOf() and the map-related
+// entries in CLAUDE.md/project-paladmin memory for context.
+//
+// nextTick is required here: child onMounted fires before the parent's (ServerScopeLayout
+// calls polling.start() in its own onMounted, which runs after this one), so calling
+// polling.stop() synchronously here is a no-op against a timer that doesn't exist yet.
+const polling = inject('polling')
+onMounted(() => nextTick(() => polling?.stop()))
+onUnmounted(() => polling?.start())
 
 // Palpagos Islands landscape bounds (Unreal world-space), used to place player dots
 // as a percentage position — no map artwork from the game is shipped with the project.
@@ -15,6 +28,17 @@ const WORLD_MIN_X = -999940
 const WORLD_MAX_X = 447900
 const WORLD_MIN_Y = -738920
 const WORLD_MAX_Y = 708920
+
+// Empirical calibration on top of the landscape-bounds transform above: the published
+// bounds alone landed players at the wrong spot (confirmed against a real server with 2
+// reference players, comparing the plotted position to their true position on the map
+// image). Rather than guess at a second "correct" set of bounds, this is a direct linear
+// fit (real = a * plotted + b) from those 2 calibration points:
+//   Player 1: plotted (54.8254%, 68.1947%) -> real (67.2254%, 46.47%)
+//   Player 2: plotted (42.088%,  46.8759%) -> real (45.888%,  23.4759%)
+// Re-derive these constants (see git history for the fitting script) if either the bounds
+// above change or a third reference point shows the fit no longer holds.
+const CALIBRATION = { leftA: 1.675177, leftB: -24.616851, topA: 1.078583, topB: -27.083659 }
 
 const customBackground = ref(false)
 onMounted(() => {
@@ -34,11 +58,13 @@ function hasPosition(p) {
 function posOf(p) {
   const nx = (p.location_x - WORLD_MIN_X) / (WORLD_MAX_X - WORLD_MIN_X)
   const ny = (p.location_y - WORLD_MIN_Y) / (WORLD_MAX_Y - WORLD_MIN_Y)
-  // Both axes are mirrored relative to the world-space bounds (confirmed against a real
-  // server: players appeared rotated 180 degrees from their actual in-game position).
+  const rawLeft = (1 - nx) * 100
+  const rawTop = ny * 100
+  const left = CALIBRATION.leftA * rawLeft + CALIBRATION.leftB
+  const top = CALIBRATION.topA * rawTop + CALIBRATION.topB
   return {
-    left: Math.min(100, Math.max(0, (1 - nx) * 100)) + '%',
-    top: Math.min(100, Math.max(0, ny * 100)) + '%',
+    left: Math.min(100, Math.max(0, left)) + '%',
+    top: Math.min(100, Math.max(0, top)) + '%',
   }
 }
 
@@ -169,7 +195,10 @@ function onTouchEnd(e) {
     <div class="card">
       <div class="card-head">
         <h2>{{ t('map.title') }}</h2>
-        <span class="card-hint">{{ dashboard.playersRefreshedLabel.value }}</span>
+        <span style="display: flex; align-items: center; gap: 10px;">
+          <span class="card-hint">{{ dashboard.playersRefreshedLabel.value }}</span>
+          <button type="button" class="btn btn-sm" @click="dashboard.refreshAll">{{ t('map.refresh') }}</button>
+        </span>
       </div>
       <div class="card-hint" style="margin-bottom: 16px;">{{ customBackground ? t('map.hintCustom') : t('map.hint') }}</div>
 

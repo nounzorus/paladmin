@@ -58,7 +58,8 @@
     "hintCustom": "Posición en vivo de cada jugador conectado, mostrada sobre la imagen de mapa proporcionada localmente.",
     "noPositions": "No hay posiciones de jugadores disponibles por ahora.",
     "unpositioned": "{count} jugador(es) conectado(s) sin datos de posición.",
-    "resetZoom": "Restablecer"
+    "resetZoom": "Restablecer",
+    "refresh": "Actualizar"
   },
   "announce": {
     "title": "Anuncio en el juego",

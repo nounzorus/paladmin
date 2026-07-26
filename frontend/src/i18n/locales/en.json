@@ -58,7 +58,8 @@
     "hintCustom": "Plotting each connected player's live position over your locally supplied map image.",
     "noPositions": "No player positions available right now.",
     "unpositioned": "{count} connected player(s) without position data.",
-    "resetZoom": "Reset"
+    "resetZoom": "Reset",
+    "refresh": "Refresh"
   },
   "announce": {
     "title": "In-game Announcement",

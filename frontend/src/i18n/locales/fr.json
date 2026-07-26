@@ -58,7 +58,8 @@
     "hintCustom": "Position en direct de chaque joueur connecté, affichée sur l'image de carte fournie localement.",
     "noPositions": "Aucune position de joueur disponible pour le moment.",
     "unpositioned": "{count} joueur(s) connecté(s) sans données de position.",
-    "resetZoom": "Réinitialiser"
+    "resetZoom": "Réinitialiser",
+    "refresh": "Actualiser"
   },
   "announce": {
     "title": "Annonce en jeu",
