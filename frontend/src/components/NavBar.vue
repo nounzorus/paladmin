@@ -17,6 +17,7 @@ const { t } = useI18n()
       <router-link v-if="hasRole('admin')" :to="{ name: 'webhooks' }">{{ t('nav.webhooks') }}</router-link>
     </nav>
     <LanguageSwitcher />
+    <a class="btn btn-ghost" href="https://buymeacoffee.com/nounzor" target="_blank" rel="noopener">☕ {{ t('nav.coffee') }}</a>
     <button class="btn btn-ghost" @click="logout">{{ t('nav.logout') }}</button>
   </header>
 </template>
