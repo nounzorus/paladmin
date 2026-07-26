@@ -39,7 +39,7 @@ It talks to the **official Palworld REST API** (Pocketpair deprecated RCON in fa
 - 👤 Player list with level, ping, and ID; kick, ban, and persistent per-player notes
 - 📢 In-game announcements, with reusable message presets
 - 💾 World save, scheduled shutdown with a warning message, immediate stop
-- ⚙️ Read-only view of active server settings (the Palworld API doesn't support hot config writes)
+- ⚙️ Read-only view of active server settings (the Palworld API doesn't support hot config writes), plus a categorized **config generator** (admin-only) covering all ~119 `PalWorldSettings.ini` options with per-setting descriptions; load your live settings or paste an existing config, edit, and copy the regenerated `OptionSettings=(...)` line back onto your server (unrecognized settings are preserved untouched, never dropped)
 - 🖧 Optional per-server RCON console for free-form commands (`ShowPlayers`, `TeleportToPlayer`, etc.)
 
 **Multi-server & access control**

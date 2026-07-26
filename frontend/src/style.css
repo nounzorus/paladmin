@@ -330,6 +330,61 @@ label input[type="checkbox"] { width: auto; }
 }
 .map-dot:hover .map-dot-label { opacity: 1; }
 
+/* ---------- Générateur de configuration serveur ---------- */
+.config-paste {
+  margin-bottom: 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 10px 14px;
+}
+.config-paste summary { cursor: pointer; font-size: 13.5px; color: var(--muted); }
+.config-paste summary:hover { color: var(--text); }
+.config-paste textarea {
+  width: 100%; margin-top: 10px; resize: vertical;
+  background: var(--bg-2); border: 1px solid var(--line); border-radius: 8px;
+  color: var(--text); font-family: var(--font-mono); font-size: 12.5px; padding: 10px 12px;
+}
+.config-paste .btn { margin-top: 10px; }
+.config-search {
+  width: 100%; margin-bottom: 16px;
+  background: var(--bg-2); border: 1px solid var(--line); border-radius: 8px;
+  color: var(--text); padding: 10px 12px; font-size: 14px;
+}
+.config-categories { display: flex; flex-direction: column; gap: 10px; }
+.config-category { border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+.config-category-head {
+  width: 100%; display: flex; align-items: center; justify-content: space-between;
+  background: var(--bg-2); border: none; color: var(--text);
+  font-family: var(--font-display); font-weight: 600; font-size: 13.5px;
+  padding: 12px 16px; cursor: pointer;
+}
+.config-category-head:hover { color: var(--amber-2); }
+.config-category-count {
+  font-family: var(--font-mono); font-size: 11px; color: var(--muted);
+  background: var(--panel); border-radius: 10px; padding: 2px 8px;
+}
+.config-category-body { padding: 6px 16px 16px; display: flex; flex-direction: column; gap: 14px; }
+.config-field { display: grid; grid-template-columns: 1fr 220px; gap: 12px; align-items: center; }
+.config-field label { font-size: 13px; color: var(--text); display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.config-key { color: var(--muted); font-size: 11px; }
+.config-help {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 15px; height: 15px; border-radius: 50%;
+  background: var(--bg-2); border: 1px solid var(--line); color: var(--muted);
+  font-size: 10px; cursor: help; flex: none;
+}
+.config-help:hover { color: var(--teal); border-color: var(--teal); }
+.config-field input[type="text"],
+.config-field input[type="number"],
+.config-field select { width: 100%; }
+.config-field input[type="checkbox"] { width: auto; justify-self: end; }
+.config-output { margin-top: 20px; }
+.config-output-text {
+  width: 100%; resize: vertical;
+  background: #0a1416; border: 1px solid var(--line); border-radius: 8px;
+  color: #b8d8d2; font-family: var(--font-mono); font-size: 12px; padding: 12px 14px;
+}
+
 /* ---------- Console RCON ---------- */
 .rcon-output {
   background: #0a1416;
