@@ -1,0 +1,9 @@
+node_modules/
+frontend/node_modules/
+frontend/dist/
+.env
+data/
+
+# Local-only, not part of the published project
+CLAUDE.md
+.claude/

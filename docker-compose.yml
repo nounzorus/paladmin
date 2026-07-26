@@ -1,0 +1,41 @@
+services:
+  palworld-admin:
+    build: .
+    container_name: palworld-admin
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    env_file: .env
+    volumes:
+      # Base SQLite (comptes, serveurs, historique...) — doit survivre aux recréations du conteneur.
+      - ./data:/app/data
+    # Si un de vos serveurs Palworld tourne sur la machine hôte (hors Docker),
+    # ceci permet d'utiliser "host.docker.internal" comme hôte lors de son
+    # ajout dans le panel (page « Serveurs », après la première connexion) :
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  # ---------------------------------------------------------------
+  # OPTIONNEL : serveur dédié Palworld dans le même compose.
+  # Décommentez ce bloc, puis ajoutez-le dans le panel après la première
+  # connexion (page « Serveurs ») avec host=palworld-server et le même
+  # mot de passe admin que ci-dessous. Image communautaire éprouvée :
+  # https://github.com/jammsen/docker-palworld-dedicated-server
+  # ---------------------------------------------------------------
+  # palworld-server:
+  #   image: jammsen/palworld-dedicated-server:latest
+  #   container_name: palworld-server
+  #   restart: unless-stopped
+  #   stop_grace_period: 30s
+  #   ports:
+  #     - "8211:8211/udp"      # port de jeu
+  #     # 8212 (API REST) volontairement NON publié : accessible
+  #     # uniquement au panel via le réseau interne Docker.
+  #   environment:
+  #     ALWAYS_UPDATE_ON_START: "true"
+  #     SERVER_NAME: "Mon serveur Palworld"
+  #     ADMIN_PASSWORD: "changez-moi"   # à reporter tel quel dans le panel lors de l'ajout du serveur
+  #     RESTAPI_ENABLED: "true"
+  #     RESTAPI_PORT: "8212"
+  #   volumes:
+  #     - ./palworld-data:/palworld
