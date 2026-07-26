@@ -7,3 +7,4 @@ data/
 # Local-only, not part of the published project
 CLAUDE.md
 .claude/
+.playwright-mcp/
