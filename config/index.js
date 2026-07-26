@@ -8,6 +8,7 @@ const CFG = {
   adminBootstrapPassword: process.env.PANEL_ADMIN_PASSWORD || "",
   metricsPollIntervalMs: parseInt(process.env.METRICS_POLL_INTERVAL_MS || "60000", 10),
   metricsRetentionDays: parseInt(process.env.METRICS_RETENTION_DAYS || "30", 10),
+  whitelistPollIntervalMs: parseInt(process.env.WHITELIST_POLL_INTERVAL_MS || "20000", 10),
 };
 
 if (!CFG.adminBootstrapUsername || !CFG.adminBootstrapPassword) {

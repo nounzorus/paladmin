@@ -48,11 +48,12 @@ It talks to the **official Palworld REST API** (Pocketpair deprecated RCON in fa
   | Role | Can do |
   |---|---|
   | `admin` | Everything |
-  | `moderator` | Kick / ban / unban / announce — no shutdown, restart, or RCON |
+  | `moderator` | Kick / ban / unban / announce, whitelist add/remove — no shutdown, restart, RCON, or whitelist enforcement toggle |
   | `viewer` | Read-only |
 
 - 📜 **Audit log** — every action (kick, ban, announce, shutdown, user/server changes…) recorded with who did it, on what, and when
 - 🚫 **Ban view** derived from the audit log (the Palworld API has no endpoint to list active bans)
+- ✅ **Whitelist** — per-server opt-in list of allowed players; when enabled, a background poller auto-kicks anyone connected who isn't on the list (the Palworld API has no native connection filter, so this is enforced the same way bans are derived — by working around what the API actually offers)
 
 **Automation & observability**
 - ⏰ **Scheduled tasks** — recurring auto-saves and restarts (cron-based), with in-game warning announcements before a restart

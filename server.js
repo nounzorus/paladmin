@@ -12,6 +12,7 @@ const bootstrapAdmin = require("./db/bootstrapAdmin");
 const { initScheduler } = require("./services/scheduledTasks");
 const metricsHistory = require("./services/metricsHistory");
 const webhooks = require("./services/webhooks");
+const whitelist = require("./services/whitelist");
 const { requireAuth, requireRole } = require("./middleware/auth");
 const { resolveServer, requireServerAccess } = require("./middleware/resolveServer");
 
@@ -28,6 +29,7 @@ const announcePresetsRouter = require("./routes/announce-presets");
 const scheduledTasksRouter = require("./routes/scheduled-tasks");
 const metricsHistoryRouter = require("./routes/metrics-history");
 const webhooksRouter = require("./routes/webhooks");
+const whitelistRouter = require("./routes/whitelist");
 
 const app = express();
 app.use(express.json());
@@ -74,6 +76,11 @@ app.use(
   metricsHistoryRouter
 );
 app.use(
+  "/api/servers/:serverId/whitelist",
+  requireAuth, resolveServer, requireServerAccess(),
+  whitelistRouter
+);
+app.use(
   "/api/servers/:serverId",
   requireAuth, resolveServer, requireServerAccess(),
   serverActionsRouter
@@ -94,6 +101,7 @@ metricsHistory.setTransitionHook((server, online) => {
 bootstrapAdmin().then(() => {
   initScheduler();
   metricsHistory.start();
+  whitelist.start();
   app.listen(CFG.panelPort, () => {
     console.log(`Palworld Admin Panel listening on http://0.0.0.0:${CFG.panelPort}`);
   });

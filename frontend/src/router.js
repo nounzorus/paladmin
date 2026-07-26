@@ -9,6 +9,7 @@ import DashboardView from './views/DashboardView.vue'
 import SettingsView from './views/SettingsView.vue'
 import ConsoleView from './views/ConsoleView.vue'
 import BansView from './views/BansView.vue'
+import WhitelistView from './views/WhitelistView.vue'
 import ScheduledTasksView from './views/ScheduledTasksView.vue'
 import MetricsHistoryView from './views/MetricsHistoryView.vue'
 import WebhooksView from './views/WebhooksView.vue'
@@ -28,6 +29,7 @@ const routes = [
       { path: 'settings', name: 'server-settings', component: SettingsView },
       { path: 'console', name: 'server-console', component: ConsoleView, meta: { roles: ['admin'] } },
       { path: 'bans', name: 'server-bans', component: BansView },
+      { path: 'whitelist', name: 'server-whitelist', component: WhitelistView },
       { path: 'scheduled-tasks', name: 'server-scheduled-tasks', component: ScheduledTasksView, meta: { roles: ['admin'] } },
       { path: 'metrics-history', name: 'server-metrics-history', component: MetricsHistoryView },
     ],

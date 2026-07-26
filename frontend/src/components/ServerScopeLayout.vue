@@ -44,6 +44,7 @@ watch(serverId, () => {
     <router-link class="tab" :to="{ name: 'server-dashboard', params: { serverId } }">{{ t('serverNav.dashboard') }}</router-link>
     <router-link class="tab" :to="{ name: 'server-settings', params: { serverId } }">{{ t('serverNav.settings') }}</router-link>
     <router-link class="tab" :to="{ name: 'server-bans', params: { serverId } }">{{ t('serverNav.bans') }}</router-link>
+    <router-link class="tab" :to="{ name: 'server-whitelist', params: { serverId } }">{{ t('serverNav.whitelist') }}</router-link>
     <router-link class="tab" :to="{ name: 'server-metrics-history', params: { serverId } }">{{ t('serverNav.history') }}</router-link>
     <router-link v-if="hasRole('admin')" class="tab" :to="{ name: 'server-console', params: { serverId } }">{{ t('serverNav.console') }}</router-link>
     <router-link v-if="hasRole('admin')" class="tab" :to="{ name: 'server-scheduled-tasks', params: { serverId } }">{{ t('serverNav.scheduledTasks') }}</router-link>

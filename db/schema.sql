@@ -91,6 +91,24 @@ CREATE TABLE IF NOT EXISTS metrics_history (
 );
 CREATE INDEX IF NOT EXISTS idx_metrics_history_server_captured ON metrics_history(server_id, captured_at);
 
+CREATE TABLE IF NOT EXISTS whitelist_settings (
+  server_id  INTEGER PRIMARY KEY REFERENCES servers(id) ON DELETE CASCADE,
+  enabled    INTEGER NOT NULL DEFAULT 0,
+  updated_at TEXT
+);
+
+CREATE TABLE IF NOT EXISTS whitelist_entries (
+  id                 INTEGER PRIMARY KEY AUTOINCREMENT,
+  server_id          INTEGER NOT NULL REFERENCES servers(id) ON DELETE CASCADE,
+  player_userid      TEXT NOT NULL,
+  label              TEXT,
+  added_by           INTEGER REFERENCES users(id) ON DELETE SET NULL,
+  added_by_username  TEXT,
+  created_at         TEXT NOT NULL DEFAULT (datetime('now')),
+  UNIQUE(server_id, player_userid)
+);
+CREATE INDEX IF NOT EXISTS idx_whitelist_entries_server ON whitelist_entries(server_id);
+
 CREATE TABLE IF NOT EXISTS webhooks (
   id             INTEGER PRIMARY KEY AUTOINCREMENT,
   server_id      INTEGER REFERENCES servers(id) ON DELETE CASCADE,
