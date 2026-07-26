@@ -171,10 +171,10 @@ function toggleCategory(id) {
           </button>
           <div v-show="expanded[cat.id] || searchQuery.trim()" class="config-category-body">
             <div v-for="s in cat.settings" :key="s.id" class="config-field">
-              <label :for="'cfg-' + s.id">
-                {{ s.label }}
+              <label :for="'cfg-' + s.id" class="config-field-label">
+                <span class="config-field-name">{{ s.label }}</span>
+                <span v-if="s.desc" class="config-field-desc">{{ s.desc }}</span>
                 <span class="config-key mono">{{ s.id }}</span>
-                <span v-if="s.desc" class="config-help" :title="s.desc">?</span>
               </label>
               <input v-if="s.type === 'boolean'" :id="'cfg-' + s.id" type="checkbox" v-model="form[s.id]">
               <input

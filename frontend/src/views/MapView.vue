@@ -34,9 +34,11 @@ function hasPosition(p) {
 function posOf(p) {
   const nx = (p.location_x - WORLD_MIN_X) / (WORLD_MAX_X - WORLD_MIN_X)
   const ny = (p.location_y - WORLD_MIN_Y) / (WORLD_MAX_Y - WORLD_MIN_Y)
+  // Both axes are mirrored relative to the world-space bounds (confirmed against a real
+  // server: players appeared rotated 180 degrees from their actual in-game position).
   return {
-    left: Math.min(100, Math.max(0, nx * 100)) + '%',
-    top: Math.min(100, Math.max(0, (1 - ny) * 100)) + '%',
+    left: Math.min(100, Math.max(0, (1 - nx) * 100)) + '%',
+    top: Math.min(100, Math.max(0, ny * 100)) + '%',
   }
 }
 
